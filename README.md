@@ -10,8 +10,7 @@ In the computer with which the data is collected, open the `.npi2` file in Nanop
 
 # Highlight
 - Fast approximate fitting implementation of Raman spectrums to form a map.
-- Parallel processing ability enabled.
-
+- Parallel processing ability enabled: this code processes 3-peak-fitting at a speed > 100 spectrums/second.
 # Future plans
 - Implement PL fitting functionality.
 - Implement accurate fitting with parallel processing support
