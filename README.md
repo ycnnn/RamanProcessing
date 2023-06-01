@@ -6,12 +6,15 @@ Quick Python implementation for analyzing Raman text map collected from Nanophot
 - Current no PL spectra analysis support.
 
 # I am using Nanophoton Raman and has finished a scan. How to obtain txt data file?
-In the computer with which the data is collected, open the `.npi2` file in Nanophoton Viewer and in the dropdown menu of `File`, choose `save as text maps`. There may be several warnings.
+In the computer with which the data is collected, open the `.npi2` file in Nanophoton Viewer and in the dropdown menu of `File`, choose `save as text maps`. There may be several warnings, choose ignore and go ahead to save.
 
 # Highlight
-- Fast approximate fitting implementation of Raman spectrums to form a map
-- Parallel processing ability enabled
+- Fast approximate fitting implementation of Raman spectrums to form a map.
+- Parallel processing ability enabled.
+
 # Future plans
 - Implement PL fitting functionality.
 - Implement accurate fitting with parallel processing support
 - It is likely than the current Python curve fit package does not support multiprocessing accerelating. In this case I may switch to expectation-maximization (E-M) algorithm to speed up fitting.
+
+ycnnn@UIUC
