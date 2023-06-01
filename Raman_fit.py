@@ -10,15 +10,15 @@ from functools import partial
 from fit_func import fit
 
 class Raman_raw():
-    def __init__(self, filename, height,  peak_nums, smooth_factor):
+    def __init__(self, filename, width,  peak_nums, smooth_factor):
         
         self.data = pd.read_csv(filename, 
                                 sep='\t', 
                                 header=None, 
                                 index_col=0,
                                 comment='#').T.iloc[:-1]
-        self.height = height
-        self.width = int(self.data.index.size/self.height)
+        self.width = width
+        self.height = int(self.data.index.size/self.width)
         self.peak_nums = peak_nums
         self.smooth_factor = smooth_factor
         # self.E_map_raw = np.zeros(self.width * self.height)
@@ -39,16 +39,16 @@ class Raman_raw():
 
 class MoS2_Raman():
     
-    def __init__(self, filename, height, smooth_factor=0.015):
+    def __init__(self, filename, width=400, smooth_factor=0.015):
         
-        self.height = height
+        self.width = width
         self.smooth_factor = smooth_factor
         
         self.raw = Raman_raw(filename=filename, 
-                             height=self.height, 
+                             width=self.width, 
                              peak_nums=3, 
                              smooth_factor=self.smooth_factor)
-        self.width = self.raw.width
+        self.height = self.raw.height
         
         # self.E_map_raw = np.zeros(self.width * self.height)
         # self.A_map_raw = np.zeros(self.width * self.height)
